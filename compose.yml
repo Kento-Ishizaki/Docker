@@ -1,0 +1,14 @@
+services:
+  mysql8.0:
+    image: mysql:8.0
+    container_name: mysql8.0
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    restart: always
